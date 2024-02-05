@@ -56,12 +56,12 @@ const About = ({ images }) => {
 
           <p className="pt-6 text-gray-700">
             While currently located at Lagos Nigeria, I&apos;m not limited by
-            geographical constraints and exploring availability
+            geographical constraints and exploring availability.
           </p>
 
           <p className="pt-6 text-gray-700">
             I love both Solo and team work and also love to explore
-            possibilities while coding and designing
+            possibilities while coding and designing.
           </p>
         </div>
       </div>

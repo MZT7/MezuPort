@@ -27,6 +27,7 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           dangerous-clean-slate: true
+          local-dir: ./dist/
 
       - name: Check if Directory Exists
         run: |
@@ -53,6 +54,6 @@ jobs:
 
           rm -rf assets
 
-      - name: Move Dist Contents to Root
-        run: |
-          mv makers/dist/* .
+      # - name: Move Dist Contents to Root
+      #   run: |
+      #     mv makers/dist/* .

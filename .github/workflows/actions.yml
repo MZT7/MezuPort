@@ -23,13 +23,6 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.ftp_server }}
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
-          dangerous-clean-slate: true
-          # working-directory: ./
-          # local-dir: ./dist/
-
           run: |
             if [ -d "makers" ]; then
               echo "Directory makers exists"
@@ -40,16 +33,23 @@ jobs:
               mkdir makers
               echo "Hello from makers" > makers/hello.txt
             fi
-             shopt -s extglob
+
+              shopt -s extglob
             if [ -d "temp" ]; then
               rm -rf temp
             fi
+
             mkdir -p temp
             mv !(.github|temp|makers|.htaccess|assets|.well-known|index.html|*.jpeg|*.webm|server.js) temp/
 
             mv temp/* makers/
 
             rm -rf assets
+
+          server: ${{ secrets.ftp_server }}
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          dangerous-clean-slate: true
 
       # - name: Check if Directory Exists
       #   run: |

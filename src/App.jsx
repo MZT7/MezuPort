@@ -13,6 +13,7 @@ import Blog from "./pages/Blog";
 import BlogHome from "./pages/BlogHome";
 import NotFound from "./pages/NotFound";
 import { Helmet } from "react-helmet";
+// import "dotenv/config";
 
 const imageUrls = [
   "mezu2.jpg",

@@ -55,7 +55,7 @@ jobs:
           git config --local user.name "MZT7"
           git add -A
           git commit -m "Update makers directory"
-          git push https://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@github.com/MZT7/MezuPort.git HEAD:main
+          git push https://${{ secrets.access }}@github.com/MZT7/MezuPort.git HEAD:main
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4

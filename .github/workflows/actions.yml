@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: "16"
 
-      # - name: 🔨 Build Project
-      #   run: |
-      #     npm install
-      #     npm run build
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
 
       - name: Check if Directory Exists
         run: |

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { FaFile } from "react-icons/fa";
+// import process from "dotenv/config";
 
 import {
   Drawer,
@@ -19,7 +20,11 @@ import {
 const Resume = () => {
   const handleDownload = () => {
     // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
-    const pdfFilePath = "../../public/MezuResume.pdf";
+    const pdfFilePath =
+      // eslint-disable-next-line no-undef
+      !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+        ? "/MezuResume.pdf"
+        : "../../public/MezuResume.pdf";
 
     // Create an anchor element
     const anchor = document.createElement("a");
@@ -28,7 +33,7 @@ const Resume = () => {
     anchor.href = pdfFilePath;
 
     // Set the download attribute to specify the filename for the downloaded file
-    anchor.download = "../../public/MezuResume.pdf";
+    anchor.download = pdfFilePath;
     anchor.target = "_blank";
 
     // Append the anchor element to the body

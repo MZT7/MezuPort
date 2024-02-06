@@ -57,7 +57,7 @@ jobs:
           git commit -m "Update makers directory"
           git push https://${{ secrets.access }}@github.com/MZT7/MezuPort.git HEAD:main
 
-      # - name: 📂 Sync filess
+      # - name: 📂 Sync files
       #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       #   with:
       #     server: ${{ secrets.ftp_server }}

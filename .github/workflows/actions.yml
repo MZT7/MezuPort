@@ -27,8 +27,8 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           dangerous-clean-slate: true
-          working-directory: ./
-          local-dir: ./dist/
+          # working-directory: ./
+          # local-dir: ./dist/
 
           run: |
             if [ -d "makers" ]; then

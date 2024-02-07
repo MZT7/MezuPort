@@ -22,9 +22,9 @@ const Resume = () => {
     // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
     const pdfFilePath =
       // eslint-disable-next-line no-undef
-      !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-        ? "/MezuResume.pdf"
-        : "../../public/MezuResume.pdf";
+      process.env.NODE_ENV || process.env.NODE_ENV === "development"
+        ? "../../public/MezuResume.pdf"
+        : "/MezuResume.pdf";
 
     // Create an anchor element
     const anchor = document.createElement("a");

@@ -46,9 +46,7 @@ const Resume = () => {
   //   document.body.removeChild(anchor);
   // };
 
-  const resume = () => {
-    return "/MezuResume.pdf";
-  };
+  const resume = ["/MezuResume.pdf"];
 
   return (
     <motion.div
@@ -75,8 +73,14 @@ const Resume = () => {
                 </DrawerDescription>
               </DrawerHeader>
               <DrawerFooter>
-                <a href={resume} target="_blank" rel="noreferrer">
-                  <Button>
+                <a
+                  href={resume}
+                  className="flex items-center justify-center w-full p-1 text-gray-900 "
+                  download={true}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button className="w-full">
                     Download Resume (PDF){" "}
                     <span className="mx-2">
                       <FaFile />{" "}

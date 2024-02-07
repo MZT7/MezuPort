@@ -57,7 +57,7 @@ jobs:
       #     git commit -m "Update makers directory"
       #     git push https://${{ secrets.access }}@github.com/MZT7/MezuPort.git HEAD:main
 
-      - name: 📂 Sync files
+      - name: 📂 Sync files_2
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.ftp_server }}
@@ -66,11 +66,11 @@ jobs:
           dangerous-clean-slate: true
           local-dir: ./dist/
 
-      - name: 📂 Sync files
+      - name: 📂 Sync files_2
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.ftp_server }}
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           # dangerous-clean-slate: true
-          server-dir: mezudev.site/makers/
+          server-dir: makers/

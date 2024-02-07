@@ -73,4 +73,4 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           # dangerous-clean-slate: true
-          server-dir: mezudev.site/makers
+          server-dir: mezudev.site/makers/

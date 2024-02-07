@@ -18,32 +18,36 @@ import {
 } from "./ui/drawer";
 
 const Resume = () => {
-  const handleDownload = () => {
-    // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
-    const pdfFilePath =
-      // eslint-disable-next-line no-undef
-      !process.env.NODE_ENV || !process.env.NODE_ENV === "development"
-        ? "/MezuResume.pdf"
-        : "../../public/MezuResume.pdf";
+  // const handleDownload = () => {
+  //   // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
+  //   const pdfFilePath =
+  //     // eslint-disable-next-line no-undef
+  //     !process.env.NODE_ENV || !process.env.NODE_ENV === "development"
+  //       ? "/MezuResume.pdf"
+  //       : "../../public/MezuResume.pdf";
 
-    // Create an anchor element
-    const anchor = document.createElement("a");
+  //   // Create an anchor element
+  //   const anchor = document.createElement("a");
 
-    // Set the href attribute to the file path
-    anchor.href = pdfFilePath;
+  //   // Set the href attribute to the file path
+  //   anchor.href = pdfFilePath;
 
-    // Set the download attribute to specify the filename for the downloaded file
-    anchor.download = pdfFilePath;
-    anchor.target = "_blank";
+  //   // Set the download attribute to specify the filename for the downloaded file
+  //   anchor.download = pdfFilePath;
+  //   anchor.target = "_blank";
 
-    // Append the anchor element to the body
-    document.body.appendChild(anchor);
+  //   // Append the anchor element to the body
+  //   document.body.appendChild(anchor);
 
-    // Trigger a click on the anchor element to initiate the download
-    anchor.click();
+  //   // Trigger a click on the anchor element to initiate the download
+  //   anchor.click();
 
-    // Remove the anchor element from the body
-    document.body.removeChild(anchor);
+  //   // Remove the anchor element from the body
+  //   document.body.removeChild(anchor);
+  // };
+
+  const resume = () => {
+    return "/MezuResume.pdf";
   };
 
   return (
@@ -71,12 +75,14 @@ const Resume = () => {
                 </DrawerDescription>
               </DrawerHeader>
               <DrawerFooter>
-                <Button onClick={handleDownload}>
-                  Download Resume (PDF){" "}
-                  <span className="mx-2">
-                    <FaFile />{" "}
-                  </span>{" "}
-                </Button>
+                <a href={resume} target="_blank" rel="noreferrer">
+                  <Button>
+                    Download Resume (PDF){" "}
+                    <span className="mx-2">
+                      <FaFile />{" "}
+                    </span>{" "}
+                  </Button>
+                </a>
                 <DrawerClose>
                   <Button variant="destructive" className="w-full">
                     Cancel

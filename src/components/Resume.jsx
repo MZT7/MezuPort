@@ -46,7 +46,13 @@ const Resume = () => {
   //   document.body.removeChild(anchor);
   // };
 
-  const resume = ["/MezuResume.pdf"];
+  const file =
+    // eslint-disable-next-line no-undef
+    !process.env.NODE_ENV || process.env.NODE_ENV !== "development"
+      ? "/MezuResume.pdf"
+      : "../../public/MezuResume.pdf";
+
+  const resume = [file];
 
   return (
     <motion.div

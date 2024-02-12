@@ -66,6 +66,10 @@ jobs:
           dangerous-clean-slate: true
           local-dir: ./dist/
 
+      - name: Remove Dist Contents from Root
+        run: |
+          rm -rf dist public
+
       - name: 📂 Sync files_2
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:

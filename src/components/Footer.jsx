@@ -40,6 +40,24 @@ const Footer = () => {
     toast("Thanks for subscribing my newletter ✨", {
       description: `An email has been sent to ${values.email}`,
     });
+
+    fetch("https://server.mezudev.site/api/send-welcome-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: values.email,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to send welcome email");
+        }
+      })
+      .catch((error) => {
+        console.error("Error sending welcome email:", error.message);
+      });
   }
 
   return (

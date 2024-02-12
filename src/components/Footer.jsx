@@ -164,7 +164,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="d8080cv.pdf" download="MezuResume.pdf" target="_blank">
+                <a href="MezuResume.pdf" download={true} target="_blank">
                   Resume
                 </a>
               </li>
